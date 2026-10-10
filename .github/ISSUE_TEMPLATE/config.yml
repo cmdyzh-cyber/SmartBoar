@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 安装与使用说明
+    url: https://github.com/cmdyzh-cyber/SmartBoar/blob/main/docs/安装与使用.md
+    about: 下载、设置、测试、旧任务清理和恢复

@@ -1,0 +1,12 @@
+#!/bin/sh
+# Installation never submits print data or cancels tasks.
+if [ "${3:-/}" != / ]; then
+    echo 'Printer setup deferred until the target system is booted.'
+    exit 0
+fi
+if /Library/Printers/LegacyPrint/Core/legacyprintctl configure --auto; then
+    echo 'Supported printer configured. Open SmartBoar to print a test page.'
+else
+    echo 'Software installed. Connect/select a supported printer in SmartBoar.'
+fi
+exit 0

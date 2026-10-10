@@ -1,0 +1,310 @@
+{
+  "schema": 1,
+  "version": "2026.10.09.1",
+  "profiles": [
+    {
+      "id": "hp-laser-108a",
+      "model": "HP Laser 108a",
+      "family": "SpliX / QPDL",
+      "support": "verified",
+      "match": {
+        "vendorIds": [
+          1008
+        ],
+        "usbIds": [
+          {
+            "vid": 1008,
+            "pid": 59434
+          }
+        ],
+        "products": [
+          "HP Laser 108a"
+        ],
+        "requireUsbId": true
+      },
+      "module": "hp108a-splix-fixed",
+      "ppd": "Drivers/hp108a-splix-fixed/HP108a.ppd",
+      "queueSlug": "HP108a",
+      "uriTemplate": "usb://HP/HP%20Laser%20103%20107%20108?serial={serial}",
+      "usbAction": "hp108a-classic",
+      "architectures": [
+        "arm64"
+      ],
+      "minimumMacOS": 14,
+      "preservePPDMarkers": [
+        "*QPDL SpecialBandWidth: True",
+        "*QPDL QPDLVersion: \"3\""
+      ],
+      "notes": "驱动与 USB 修复方案已在 M3 / macOS 14.6 实际出纸验证；此新版安装包还需独立安装验证。",
+      "verification": [
+        {
+          "architecture": "arm64",
+          "system": "macOS 14.6",
+          "computer": "MacBook Air M3",
+          "checks": [
+            "A4 single-page physical output",
+            "USB reconnect physical output",
+            "no repeat output"
+          ],
+          "scope": "driver-and-device-repair; installer 0.2 not yet physically validated"
+        }
+      ],
+      "sources": [
+        "https://github.com/photovirus/splix-macos",
+        "https://github.com/Kuberwastaken/hp-laser-1008a-macos"
+      ]
+    },
+    {
+      "id": "samsung-ml-1510",
+      "model": "Samsung ML-1510",
+      "family": "SpliX / QPDL",
+      "support": "catalog-only",
+      "match": {
+        "vendorIds": [
+          1256
+        ],
+        "usbIds": [],
+        "products": [
+          "Samsung ML-1510",
+          "ML-1510",
+          "Samsung ML-1510 Series",
+          "ML-1510 Series"
+        ],
+        "requireUsbId": false
+      },
+      "notes": "上游 SpliX 列表报告可用。本项目尚未验证此机型的 Mac 驱动与 USB 通信，因此暂不安装。",
+      "verification": [],
+      "sources": [
+        "https://openprinting.github.io/splix/"
+      ]
+    },
+    {
+      "id": "samsung-ml-1610",
+      "model": "Samsung ML-1610",
+      "family": "SpliX / QPDL",
+      "support": "catalog-only",
+      "match": {
+        "vendorIds": [
+          1256
+        ],
+        "usbIds": [],
+        "products": [
+          "Samsung ML-1610",
+          "ML-1610",
+          "Samsung ML-1610 Series",
+          "ML-1610 Series"
+        ],
+        "requireUsbId": false
+      },
+      "notes": "上游 SpliX 列表报告可用。本项目尚未验证此机型的 Mac 驱动与 USB 通信，因此暂不安装。",
+      "verification": [],
+      "sources": [
+        "https://openprinting.github.io/splix/"
+      ]
+    },
+    {
+      "id": "samsung-ml-1660",
+      "model": "Samsung ML-1660",
+      "family": "SpliX / QPDL",
+      "support": "catalog-only",
+      "match": {
+        "vendorIds": [
+          1256
+        ],
+        "usbIds": [],
+        "products": [
+          "Samsung ML-1660",
+          "ML-1660",
+          "Samsung ML-1660 Series",
+          "ML-1660 Series"
+        ],
+        "requireUsbId": false
+      },
+      "notes": "上游 SpliX 列表报告可用。本项目尚未验证此机型的 Mac 驱动与 USB 通信，因此暂不安装。",
+      "verification": [],
+      "sources": [
+        "https://openprinting.github.io/splix/"
+      ]
+    },
+    {
+      "id": "samsung-ml-2010",
+      "model": "Samsung ML-2010",
+      "family": "SpliX / QPDL",
+      "support": "catalog-only",
+      "match": {
+        "vendorIds": [
+          1256
+        ],
+        "usbIds": [],
+        "products": [
+          "Samsung ML-2010",
+          "ML-2010",
+          "Samsung ML-2010 Series",
+          "ML-2010 Series"
+        ],
+        "requireUsbId": false
+      },
+      "notes": "上游 SpliX 列表报告可用。本项目尚未验证此机型的 Mac 驱动与 USB 通信，因此暂不安装。",
+      "verification": [],
+      "sources": [
+        "https://openprinting.github.io/splix/"
+      ]
+    },
+    {
+      "id": "samsung-scx-4200",
+      "model": "Samsung SCX-4200",
+      "family": "SpliX / QPDL",
+      "support": "catalog-only",
+      "match": {
+        "vendorIds": [
+          1256
+        ],
+        "usbIds": [],
+        "products": [
+          "Samsung SCX-4200",
+          "SCX-4200",
+          "Samsung SCX-4200 Series",
+          "SCX-4200 Series"
+        ],
+        "requireUsbId": false
+      },
+      "notes": "上游 SpliX 列表报告可用。本项目尚未验证此机型的 Mac 驱动与 USB 通信，因此暂不安装。",
+      "verification": [],
+      "sources": [
+        "https://openprinting.github.io/splix/"
+      ]
+    },
+    {
+      "id": "samsung-scx-4300",
+      "model": "Samsung SCX-4300",
+      "family": "SpliX / QPDL",
+      "support": "catalog-only",
+      "match": {
+        "vendorIds": [
+          1256
+        ],
+        "usbIds": [],
+        "products": [
+          "Samsung SCX-4300",
+          "SCX-4300",
+          "Samsung SCX-4300 Series",
+          "SCX-4300 Series"
+        ],
+        "requireUsbId": false
+      },
+      "notes": "上游 SpliX 列表报告可用。本项目尚未验证此机型的 Mac 驱动与 USB 通信，因此暂不安装。",
+      "verification": [],
+      "sources": [
+        "https://openprinting.github.io/splix/"
+      ]
+    },
+    {
+      "id": "xerox-phaser-3117",
+      "model": "Xerox Phaser 3117",
+      "family": "SpliX / QPDL",
+      "support": "catalog-only",
+      "match": {
+        "vendorIds": [
+          2340
+        ],
+        "usbIds": [],
+        "products": [
+          "Xerox Phaser 3117",
+          "Phaser 3117",
+          "Xerox Phaser 3117 Series",
+          "Phaser 3117 Series",
+          "Xerox Phaser 3117 Laser Printer"
+        ],
+        "requireUsbId": false
+      },
+      "notes": "上游 SpliX 列表报告可用。本项目尚未验证此机型的 Mac 驱动与 USB 通信，因此暂不安装。",
+      "verification": [],
+      "sources": [
+        "https://openprinting.github.io/splix/"
+      ]
+    },
+    {
+      "id": "xerox-phaser-3160",
+      "model": "Xerox Phaser 3160",
+      "family": "SpliX / QPDL",
+      "support": "catalog-only",
+      "match": {
+        "vendorIds": [
+          2340
+        ],
+        "usbIds": [],
+        "products": [
+          "Xerox Phaser 3160",
+          "Phaser 3160",
+          "Xerox Phaser 3160 Series",
+          "Phaser 3160 Series",
+          "Xerox Phaser 3160 Laser Printer"
+        ],
+        "requireUsbId": false
+      },
+      "notes": "上游 SpliX 列表报告可用。本项目尚未验证此机型的 Mac 驱动与 USB 通信，因此暂不安装。",
+      "verification": [],
+      "sources": [
+        "https://openprinting.github.io/splix/"
+      ]
+    },
+    {
+      "id": "dell-1100",
+      "model": "Dell 1100",
+      "family": "SpliX / QPDL",
+      "support": "catalog-only",
+      "match": {
+        "vendorIds": [
+          16700
+        ],
+        "usbIds": [],
+        "products": [
+          "Dell 1100",
+          "1100",
+          "Dell 1100 Series",
+          "1100 Series"
+        ],
+        "requireUsbId": false
+      },
+      "notes": "上游 SpliX 列表报告可用。本项目尚未验证此机型的 Mac 驱动与 USB 通信，因此暂不安装。",
+      "verification": [],
+      "sources": [
+        "https://openprinting.github.io/splix/"
+      ]
+    },
+    {
+      "id": "dell-1110",
+      "model": "Dell 1110",
+      "family": "SpliX / QPDL",
+      "support": "catalog-only",
+      "match": {
+        "vendorIds": [
+          16700
+        ],
+        "usbIds": [],
+        "products": [
+          "Dell 1110",
+          "1110",
+          "Dell 1110 Series",
+          "1110 Series"
+        ],
+        "requireUsbId": false
+      },
+      "notes": "上游 SpliX 列表报告可用。本项目尚未验证此机型的 Mac 驱动与 USB 通信，因此暂不安装。",
+      "verification": [],
+      "sources": [
+        "https://openprinting.github.io/splix/"
+      ]
+    }
+  ],
+  "modules": {
+    "hp108a-splix-fixed": {
+      "engine": "cups-raster",
+      "filter": "Drivers/hp108a-splix-fixed/rastertoqpdl",
+      "assets": {},
+      "license": "GPL-2.0",
+      "sourceArchive": "licenses/SpliX-fixed-source.tar.gz"
+    }
+  },
+  "networkDownloads": false
+}

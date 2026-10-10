@@ -1,0 +1,11 @@
+SmartBoar / LegacyPrint
+
+Single-page print test / One copy / A4
+
+Check that the whole page prints once without stripes or extra sheets.
+
+0123456789  ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+This test was sent to the printer selected in SmartBoar.
+
+End of test page.

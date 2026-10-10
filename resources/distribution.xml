@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<installer-gui-script minSpecVersion="2">
+<title>聪明的野猪 — 老打印机助手</title>
+<options customize="never" require-scripts="true" hostArchitectures="arm64"/>
+<domains enable_localSystem="true" enable_currentUserHome="false" enable_anywhere="false"/>
+<welcome file="welcome.html" mime-type="text/html"/>
+<license file="COPYING-SpliX.txt" mime-type="text/plain"/>
+<conclusion file="conclusion.html" mime-type="text/html"/>
+<installation-check script="supportedSystem()"/>
+<script><![CDATA[
+function supportedSystem() {
+    if (parseInt(system.version.ProductVersion.split('.')[0], 10) < 14) {
+        my.result.title = '需要 macOS 14 或更高版本';
+        my.result.message = '此试用版适用于 Apple Silicon Mac。';
+        my.result.type = 'Fatal';
+        return false;
+    }
+    return true;
+}
+]]></script>
+<choices-outline><line choice="main"/></choices-outline>
+<choice id="main" visible="false"><pkg-ref id="org.legacyprint.core"/></choice>
+<pkg-ref id="org.legacyprint.core" version="0.2.0" onConclusion="none">LegacyPrint-component.pkg</pkg-ref>
+</installer-gui-script>

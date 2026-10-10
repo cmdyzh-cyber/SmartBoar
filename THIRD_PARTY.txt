@@ -1,0 +1,9 @@
+SpliX driver / PPD / modified corresponding source: GPL version 2 terms, see COPYING-SpliX.txt and source headers.
+Sources: https://github.com/photovirus/splix-macos commit 941fe7b51103543ff9043a63ee8419ec979ec580
+HP Laser 10x support: OpenPrinting/splix commit 206e283 (patch included in corresponding source archive).
+300-dpi geometry correction: https://github.com/Kuberwastaken/hp-laser-1008a-macos commit f51f18b50b70fde4add9e5c2444c490b7eecca89
+The original projects and contributors retain their copyrights. Their licenses apply to their code and patches.
+The application, configuration manager and USB diagnostic source in src/ are original LegacyPrint code, under LICENSE.
+The source archive vendor/SpliX-fixed-source.tar.gz contains the modified driver source corresponding to the included rastertoqpdl.
+No proprietary HP Linux/macOS driver binaries are included.
+The installer is an unofficial community project and is not affiliated with HP or Apple.
