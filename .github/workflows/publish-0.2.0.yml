@@ -1,0 +1,60 @@
+name: Publish SmartBoar 0.2.0 trial
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publish-0.2.0.yml'
+      - 'dist/v0.2.0/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-smartboar-v0.2.0
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Read the public source at this commit
+        env:
+          SOURCE_REPOSITORY: ${{ github.repository }}
+          SOURCE_COMMIT: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          git init "$GITHUB_WORKSPACE"
+          git -C "$GITHUB_WORKSPACE" remote add origin "https://github.com/${SOURCE_REPOSITORY}.git"
+          git -C "$GITHUB_WORKSPACE" fetch --depth=1 origin "$SOURCE_COMMIT"
+          git -C "$GITHUB_WORKSPACE" checkout --detach FETCH_HEAD
+
+      - name: Verify the prepared downloads
+        working-directory: dist/v0.2.0
+        run: |
+          set -euo pipefail
+          sha256sum --check SHA256SUMS.txt
+          test -s RELEASE_NOTES.md
+
+      - name: Publish the trial release and its three downloads
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_COMMIT: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          command -v gh
+          gh release create v0.2.0 \
+            dist/v0.2.0/SmartBoar-0.2.0-arm64-unsigned.pkg \
+            dist/v0.2.0/SmartBoar-0.2.0-source.zip \
+            dist/v0.2.0/SHA256SUMS.txt \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$RELEASE_COMMIT" \
+            --prerelease --latest=false \
+            --title '聪明的野猪 v0.2.0 · 首个公开试用版' \
+            --notes-file dist/v0.2.0/RELEASE_NOTES.md
+
+          # The macOS installer is uploaded, never installed or executed here.
+          # Existing releases are not overwritten. For a new version, prepare
+          # separately reviewed files, hashes, notes and a new versioned workflow.
