@@ -1,0 +1,2 @@
+f33b91e77b1ef09dba0d161544ca2c523691dd4b869bbf8144facc77ca97c330  SmartBoar-0.2.0-arm64-unsigned.pkg
+75eb549c0821b6daaec75547ade09c86e528ea82961cb89546fe1cf9a894251d  SmartBoar-0.2.0-source.zip
